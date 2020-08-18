@@ -1,0 +1,18 @@
+USE [TESTBASE]
+GO
+CREATE TABLE [dbo].[Valutas](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Code] [nvarchar](max) NULL,
+	[Name] [nvarchar](max) NULL,
+	[EngName] [nvarchar](max) NULL,
+	[Nominal] [int] NOT NULL,
+	[ISO_Num_Code] [int] NOT NULL,
+	[ISO_Char_Code] [nvarchar](max) NULL,
+ CONSTRAINT [PK_dbo.Valutas] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+

@@ -1,0 +1,8 @@
+CREATE FUNCTION GetCursByDate (@DateCurs date, @CodeVal CHAR(40))
+    RETURNS TABLE
+    AS RETURN (
+		SELECT		dbo.ValCurs.Value
+		FROM        dbo.Valutas INNER JOIN
+							 dbo.ValCurs ON dbo.Valutas.Id = dbo.ValCurs.ValutaId
+		WHERE       (cast(dbo.ValCurs.CursDate as date) = @DateCurs
+					AND (dbo.Valutas.Code = @CodeVal)))
